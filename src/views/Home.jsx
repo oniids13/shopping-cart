@@ -1,7 +1,16 @@
 
+import Header from "../components/Header/Header"
+import Footer from "../components/Footer/Footer"
+import HomeContent from "../components/HomeContent/HomeContent"
 
 const Home = () => {
-    return <h1>Hello World!</h1>
+    return (
+        <>
+        <Header />
+        <HomeContent />
+        <Footer />
+        </>
+    )
 }
 
 
