@@ -8,3 +8,14 @@
 .centerImg{
     text-align: center;
 }
+
+
+.cardBody {
+    text-align: left;
+}
+
+
+.priceCart {
+    display: flex;
+    justify-content: space-between;
+}

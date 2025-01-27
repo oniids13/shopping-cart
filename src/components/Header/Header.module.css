@@ -42,6 +42,14 @@ header {
     justify-content: space-between;
 }
 
-button:hover {
-    color: aquamarine;
+button:hover{
+    color: aqua;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:visited {
+    color: black;
 }

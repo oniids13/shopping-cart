@@ -3,3 +3,10 @@
     height: 100%;
     margin-bottom: 0;
 }
+
+.link:visited {
+    color: whitesmoke;
+}
+.link {
+    text-decoration: none;
+}
