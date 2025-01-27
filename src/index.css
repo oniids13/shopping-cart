@@ -9,3 +9,8 @@ body {
   flex-direction: column;
   height: 100vh;
 }
+
+.main {
+  background-color: #F2F8FC;
+  padding-bottom: 5%;
+}

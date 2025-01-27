@@ -1,29 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useOutletContext } from 'react-router-dom'
 import styles from './HomeContent.module.css'
-import Card from '../Card/Card'
+import Card from './Card/Card'
 import { Link } from 'react-router-dom'
 
 
 const HomeContent = () => {
 
-    const [data, setData] = useState([])
-    const [randomNum, setRandomNum] = useState()
-
-    useEffect(() => {
-        const productsFetch = async () => {
-            try {
-                const response = await fetch("https://fakestoreapi.com/products");
-                const data = await response.json();
-                console.log(data);
-                setData(data);
-              } catch (error) {
-                console.error("Error fetching products:", error);
-              }
-        }
-
-        productsFetch()
-    }, [])
-
+    
+    const { products, loading } = useOutletContext()
 
 
 
@@ -31,8 +15,10 @@ const HomeContent = () => {
         <div className={`${styles.content} pt-5`}>
             <div className='container'>
                 <Headline />
-                {data.length > 0 && <Featured
-                items={data} />}
+                {products.length > 0 && 
+                <Featured
+                items={products}
+                loading={loading} />}
             </div>
         </div>
     )
@@ -61,7 +47,7 @@ const Headline = () => {
 }
 
 
-const Featured = ({items}) => {
+const Featured = ({items, loading}) => {
     
 
     const featuredItems = items.slice(0, 6);
@@ -89,6 +75,9 @@ const Featured = ({items}) => {
         return star
     }
     
+    if (loading) {
+        return <p>Loading.....</p>
+    }
 
     return(
         <div className='container'>
