@@ -1,5 +1,4 @@
 import { useOutletContext } from 'react-router-dom'
-import styles from './HomeContent.module.css'
 import Card from './Card/Card'
 import { Link } from 'react-router-dom'
 
@@ -7,17 +6,17 @@ import { Link } from 'react-router-dom'
 const HomeContent = () => {
 
     
-    const { products, loading } = useOutletContext()
+    const { featuredItems, loading } = useOutletContext()
 
 
 
     return(
-        <div className={`${styles.content} pt-5`}>
+        <div className='pt-5'>
             <div className='container'>
                 <Headline />
-                {products.length > 0 && 
+                {featuredItems.length > 0 && 
                 <Featured
-                items={products}
+                items={featuredItems}
                 loading={loading} />}
             </div>
         </div>
@@ -38,7 +37,7 @@ const Headline = () => {
     Where shopping is more than just a click—it's an experience! Explore a wide range of high-quality products curated just for you, all at unbeatable prices. With our user-friendly interface, secure payment options, and lightning-fast delivery, we make your shopping journey effortless and enjoyable. Whether you're looking for the latest trends, daily essentials, or unique finds, we've got everything you need in one place. Shop with confidence and let us bring convenience and joy to your doorstep!"
     </p>
     <button className="btn btn-success px-5 mb-5" type="button">
-        <Link className={styles.link} to='/store'>
+        <Link className='link' to='/store'>
       Shop Now
         </Link>
     </button>
@@ -84,16 +83,17 @@ const Featured = ({items, loading}) => {
             <div className="p-5 text-center bg-body rounded-3 mt-5">
             <h1 className="text-body-emphasis pb-3">Featured Items</h1>
             <div className="row">
-            {featuredItems.map((item, index) => {
-                const randNum = (Math.random() * 4 + 1).toFixed(1)
+            {featuredItems.map((item) => {
+
                 return (
-                    <div className="col-md-4 mb-4" key={index}>
+                    <div className="col-md-4 mb-4" key={item.id}>
                         <Card
+                            id={item.id}
                             name={item.title}
                             price={item.price}
                             category={item.category}
                             image={item.image}
-                            rating={`${starRating(randNum)} (${randNum})`}
+                            rating={`${starRating(item.rating.rate)} (${item.rating.count})`}
                         />
                     </div>
                 )

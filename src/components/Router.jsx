@@ -4,6 +4,7 @@ import ErrorPage from '../views/ErrorPage'
 import MainContent from './MainContent'
 import Store from '../views/Store'
 import Cart from '../views/Cart'
+import SingleProduct from '../views/SingleProduct'
 
 
   
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route index element={<Home/>} />
       <Route path='store' element={<Store />} />
       <Route path='cart' element={<Cart />} />
+      <Route path='product/:id' element={<SingleProduct />} />
     </Route>
   )
 )

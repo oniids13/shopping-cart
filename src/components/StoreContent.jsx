@@ -51,16 +51,16 @@ const Products = ({products, loading}) => {
         <div className="p-5 text-center bg-body rounded-3 mt-5">
         <h1 className="text-body-emphasis pb-3">Our Products</h1>
         <div className="row">
-        {products.map((item, index) => {
-            const randNum = (Math.random() * 4 + 1).toFixed(1)
+        {products.map((item) => {
             return (
-                <div className="col-md-4 mb-4" key={index}>
+                <div className="col-md-4 mb-4" key={item.id}>
                     <Card
+                        id={item.id}
                         name={item.title}
                         price={item.price}
                         category={item.category}
                         image={item.image}
-                        rating={`${starRating(randNum)} (${randNum})`}
+                        rating={`${starRating(item.rating.rate)} (${item.rating.count})`}
                     />
                 </div>
             )

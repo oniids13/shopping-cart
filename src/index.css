@@ -14,3 +14,24 @@ body {
   background-color: #F2F8FC;
   padding-bottom: 5%;
 }
+.link {
+  text-decoration: none;
+}
+
+.link:visited{
+  color: whitesmoke;
+}
+
+.link:link {
+  color: whitesmoke;
+}
+
+.product-img {
+  height: 50%;
+  width: auto;
+}
+
+.img-holder {
+  display: flex;
+  justify-content: center;
+}

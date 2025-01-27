@@ -9,6 +9,7 @@ const MainContent = () => {
 
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
+    const [featuredItems, setFeaturedItems] = useState([])
   
       useEffect(() => {
           const productsFetch = async () => {
@@ -17,6 +18,7 @@ const MainContent = () => {
                   const data = await response.json();
                   setProducts(data);
                   setLoading(false)
+                  generateRandomProduct(data)
                 } catch (error) {
                   console.error("Error fetching products:", error);
                   setLoading(false)
@@ -26,13 +28,18 @@ const MainContent = () => {
           productsFetch()
       }, [])
 
+    const generateRandomProduct = (items) => {
+        const shuffled = [...items].sort(() => 0.5 - Math.random())
+        const randomItems = shuffled.slice(0,6)
+        setFeaturedItems(randomItems)
+    }
 
-
+    console.log(featuredItems)
     return (
         <>
             <Header />
             <div className="main">
-            <Outlet context={{products, loading}}/>
+            <Outlet context={{products, loading, featuredItems}}/>
             </div>
             <Footer />
        
