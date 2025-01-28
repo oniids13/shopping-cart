@@ -37,7 +37,7 @@ const Product = ({cart, setCart, product, count, setCount}) => {
 
     if(!product) {
         return (
-            <div className="spinner-border" role="status">
+            <div className="spinner-border d-flex justify-content-center container" role="status">
                 <span className="visually-hidden">Loading...</span>
             </div>
         )
