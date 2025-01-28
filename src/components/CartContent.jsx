@@ -43,7 +43,7 @@ const Cart = ({cart, setCart, setTotal}) => {
         <div className="container pt-5">
             <h1>Your Cart</h1>
             {cart.length === 0 ? (
-                <div>
+                <div className="empty-cart p-5 text-center bg-body rounded-3 mt-5">
                     <p>There is nothing in your cart :(</p>
                     <button className="btn btn-success"><Link to='/store' className='link'>Go to Store</Link></button>
                 </div>

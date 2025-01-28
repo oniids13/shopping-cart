@@ -54,10 +54,10 @@ const Products = ({products, loading}) => {
         <div className='container pt-5'>
         <div className="p-5 text-center bg-body rounded-3 mt-5">
         <h1 className="text-body-emphasis pb-3">Our Products</h1>
-        <div className="row">
+        <div className="row store">
         {products.map((item) => {
             return (
-                <div className="col-md-4 mb-4" key={item.id}>
+                <div className="product-card col-md-4 mb-4" key={item.id}>
                     <Card
                         id={item.id}
                         name={item.title}

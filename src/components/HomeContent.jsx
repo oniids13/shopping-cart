@@ -31,17 +31,22 @@ const HomeContent = () => {
 
 const Headline = () => {
     return (
-        <div className="position-relative p-5 text-center text-muted bg-body border border-dashed rounded-5">
-    <h1 className="text-body-emphasis">Welcome to Fake Shop</h1>
-    <p className="col-lg-6 mx-auto mb-4 fs-5">
-    Where shopping is more than just a click—it's an experience! Explore a wide range of high-quality products curated just for you, all at unbeatable prices. With our user-friendly interface, secure payment options, and lightning-fast delivery, we make your shopping journey effortless and enjoyable. Whether you're looking for the latest trends, daily essentials, or unique finds, we've got everything you need in one place. Shop with confidence and let us bring convenience and joy to your doorstep!"
-    </p>
-    <button className="btn btn-success px-5 mb-5" type="button">
-        <Link className='link' to='/store'>
-      Shop Now
-        </Link>
-    </button>
-  </div>
+        <div className='cover position-relative text-center text-muted bg-body border border-dashed rounded-5'>
+            <div className="col-6 left-cover ">
+                <h1 className="text-body-emphasis pt-5">Welcome to Fake Shop</h1>
+                <p className="headline-text col-lg-6 mx-auto mb-4">
+                Where shopping is more than just a click—it's an experience! Explore a wide range of high-quality products curated just for you, all at unbeatable prices. With our user-friendly interface, secure payment options, and lightning-fast delivery, we make your shopping journey effortless and enjoyable. Whether you're looking for the latest trends, daily essentials, or unique finds, we've got everything you need in one place. Shop with confidence and let us bring convenience and joy to your doorstep!"
+                </p>
+                <button className="btn btn-success px-5 mb-5" type="button">
+                    <Link className='link' to='/store'>
+                        Shop Now
+                    </Link>
+                </button>
+            </div>
+            <div className="col-6">
+                <img className='cover-pic' src="/images/cover.jpg" alt="" />
+            </div>
+        </div>
     )
 }
 
@@ -80,9 +85,9 @@ const Featured = ({items, loading}) => {
 
     return(
         <div className='container'>
-            <div className="p-5 text-center bg-body rounded-3 mt-5">
+            <div className="p-5 text-center bg-body rounded-5 mt-5 border border-dashed">
             <h1 className="text-body-emphasis pb-3">Featured Items</h1>
-            <div className="row">
+            <div className="row store">
             {featuredItems.map((item) => {
 
                 return (

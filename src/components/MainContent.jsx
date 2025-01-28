@@ -39,13 +39,14 @@ const MainContent = () => {
     console.log(featuredItems)
     return (
         <>
-            <Header
-            cart={cart} />
-            <div className="main">
-            <Outlet context={{products, loading, featuredItems, cart, setCart, setTotal, total}}/>
+            <div className="wrapper">
+                <Header
+                cart={cart} />
+                <div className="main">
+                <Outlet context={{products, loading, featuredItems, cart, setCart, setTotal, total}}/>
+                </div>
+                <Footer />
             </div>
-            <Footer />
-       
         </>
     )
 }

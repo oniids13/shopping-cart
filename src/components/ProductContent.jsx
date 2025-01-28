@@ -77,7 +77,7 @@ const Product = ({cart, setCart, product, count, setCount}) => {
     return (
         <>
         <div className="container  pt-5">
-            <div className="row bg-body rounded-3 p-5">
+            <div className="row bg-body rounded-3 p-5 product">
                 <div className="img-holder col-6">
                     <img className="product-img" src={product.image} alt={product.title} />
                 </div>
