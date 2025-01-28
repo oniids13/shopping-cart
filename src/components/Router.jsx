@@ -6,7 +6,7 @@ import Store from '../views/Store'
 import Cart from '../views/Cart'
 import SingleProduct from '../views/SingleProduct'
 import CheckOutContent from './Checkout'
-
+import OrderSuccess from '../views/OrderSuccess'
 
   
 
@@ -22,6 +22,7 @@ const router = createBrowserRouter(
       <Route path='cart' element={<Cart />} />
       <Route path='product/:id' element={<SingleProduct />} />
       <Route path='checkout' element={<CheckOutContent />} />
+      <Route path='success' element={< OrderSuccess/>} />
     </Route>
   )
 )

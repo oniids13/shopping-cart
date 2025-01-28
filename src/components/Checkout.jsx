@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom"
+import { useOutletContext, Link } from "react-router-dom"
 
 
 
@@ -54,7 +54,7 @@ const Checkout = ({cart, total}) => {
           <div className="row g-3">
             <div className="col-sm-6">
               <label htmlFor="firstName" className="form-label">First name</label>
-              <input type="text" className="form-control" id="firstName" placeholder="" value="" required="" />
+              <input type="text" className="form-control" id="firstName" placeholder="" value="" required/>
               <div className="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -62,7 +62,7 @@ const Checkout = ({cart, total}) => {
 
             <div className="col-sm-6">
               <label htmlFor="lastName" className="form-label">Last name</label>
-              <input type="text" className="form-control" id="lastName" placeholder="" value="" required="" />
+              <input type="text" className="form-control" id="lastName" placeholder="" value="" required/>
               <div className="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -70,7 +70,7 @@ const Checkout = ({cart, total}) => {
 
             <div className="col-12">
               <label htmlFor="email" className="form-label">Email <span className="text-body-secondary">(Optional)</span></label>
-              <input type="email" className="form-control" id="email" placeholder="you@example.com" />
+              <input type="email" className="form-control" id="email" placeholder="you@example.com" required />
               <div className="invalid-feedback">
                 Please enter a valid email address for shipping updates.
               </div>
@@ -78,7 +78,7 @@ const Checkout = ({cart, total}) => {
 
             <div className="col-12">
               <label htmlFor="address" className="form-label">Address</label>
-              <input type="text" className="form-control" id="address" placeholder="1234 Main St" required="" />
+              <input type="text" className="form-control" id="address" placeholder="1234 Main St" required />
               <div className="invalid-feedback">
                 Please enter your shipping address.
               </div>
@@ -177,7 +177,7 @@ const Checkout = ({cart, total}) => {
 
           <hr className="my-4" />
 
-          <button className="w-100 btn btn-primary btn-lg">Continue to checkout</button>
+          <button className="w-100 btn btn-primary btn-lg" type="submit"><Link to='/success' className='link'>Continue to checkout</Link></button>
         </form>
       </div>
     </div>

@@ -60,7 +60,7 @@ const Cart = ({cart, setCart, setTotal}) => {
                 <tbody>
                     {cart.map((item) => (
                         <tr key={item.id}>
-                        <td scope="row">{item.title}</td>
+                        <td scope="row"><Link className="link text-primary" to={`/product/${item.id}`}>{item.title}</Link></td>
                         <td>${item.price}</td>
                         <td>
                             <input id="qty" type="number" value={item.qty} min='1' max='10' onChange={(e) => upddateQuantity(item.id, parseInt(e.target.value))} />
