@@ -1,10 +1,10 @@
-import Product from "../components/ProductContent";
+import ProductContent from "../components/ProductContent";
 
 
 
 const SingleProduct = () => {
     return(
-        <Product />
+        <ProductContent />
     )
 
 }

@@ -10,6 +10,7 @@ const MainContent = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const [featuredItems, setFeaturedItems] = useState([])
+    const [cart, setCart] = useState([])
   
       useEffect(() => {
           const productsFetch = async () => {
@@ -39,7 +40,7 @@ const MainContent = () => {
         <>
             <Header />
             <div className="main">
-            <Outlet context={{products, loading, featuredItems}}/>
+            <Outlet context={{products, loading, featuredItems, cart, setCart}}/>
             </div>
             <Footer />
        
