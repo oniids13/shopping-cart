@@ -36,7 +36,11 @@ const Product = ({cart, setCart, product, count, setCount}) => {
     
 
     if(!product) {
-        return <p>Loading.....</p>
+        return (
+            <div className="spinner-border" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        )
     }
 
     const handleIncrement = () => {

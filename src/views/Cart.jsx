@@ -1,15 +1,8 @@
-import { useOutletContext } from "react-router-dom"
+import CartContent from "../components/CartContent";
+
 
 const Cart = () => {
-
-    const {cart} = useOutletContext()
-
-    console.log(cart)
-
-    return(
-        <h1>Sample Cart</h1>
-    )
+    return <CartContent />
 }
-
 
 export default Cart

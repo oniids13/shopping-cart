@@ -11,6 +11,7 @@ const MainContent = () => {
     const [loading, setLoading] = useState(true)
     const [featuredItems, setFeaturedItems] = useState([])
     const [cart, setCart] = useState([])
+    const [total, setTotal] = useState(0)
   
       useEffect(() => {
           const productsFetch = async () => {
@@ -38,9 +39,10 @@ const MainContent = () => {
     console.log(featuredItems)
     return (
         <>
-            <Header />
+            <Header
+            cart={cart} />
             <div className="main">
-            <Outlet context={{products, loading, featuredItems, cart, setCart}}/>
+            <Outlet context={{products, loading, featuredItems, cart, setCart, setTotal, total}}/>
             </div>
             <Footer />
        
