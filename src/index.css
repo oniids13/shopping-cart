@@ -81,6 +81,15 @@ body, html {
   font-size: clamp(16px, 4vw, 24px)
 }
 
+
+footer {
+  text-align: center;
+  padding: 10px;
+  height: 15px;
+  font-weight: 700;
+}
+
+
 @media (max-width: 1200px) {
   .product {
     display: flex;
