@@ -8,8 +8,6 @@ A responsive e-commerce frontend built with **React** and **Vite**, designed to 
 
 ## 📸 Screenshots
 
-![Homepage](https://via.placeholder.com/800x400)
-![Shopping Cart](https://via.placeholder.com/800x400)
 
 ## 💡 Features
 
